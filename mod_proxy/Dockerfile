@@ -8,7 +8,7 @@ RUN echo 'hello' > /var/www/html/hello.html
 
 ADD mod_proxy.conf /etc/httpd/conf.d/mod_proxy.conf
 
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT /usr/sbin/httpd && /bin/bash
 #CMD ["-D", "FOREGROUND"]
