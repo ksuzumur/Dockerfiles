@@ -11,7 +11,7 @@ ADD workers.properties /etc/httpd/conf.d/workers.properties
 ADD uriworkermap.properties /etc/httpd/conf.d/uriworkermap.properties
 ADD mod_jk.so /etc/httpd/modules/mod_jk.so
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT /usr/sbin/httpd && /bin/bash
 #CMD ["-D", "FOREGROUND"]
