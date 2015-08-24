@@ -13,4 +13,4 @@ COPY httpdconf.sed /tmp/
 RUN sed -i -f /tmp/httpdconf.sed /etc/httpd/conf/httpd.conf
 
 env LANG               C
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/httpd  --pidfile=/tmp/httpd.pid", "-D", "FOREGROUND"]
