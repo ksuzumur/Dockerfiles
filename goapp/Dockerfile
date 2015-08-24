@@ -1,4 +1,4 @@
-FROM openshift/base-centos7
+FROM openshift/base-rhel7
 
 MAINTAINER Jessica Forrester <jforrest@redhat.com>
 ADD bin/hello-openshift /hello-openshift
