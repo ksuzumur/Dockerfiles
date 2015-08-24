@@ -9,7 +9,8 @@ RUN echo 'hello' > /var/www/html/index.html
 
 EXPOSE 80
 
-RUN sed -i -f httpdconf.sed /etc/httpd/conf/httpd.conf
+COPY httpdconf.sed /tmp/
+RUN sed -i -f /tmp/httpdconf.sed /etc/httpd/conf/httpd.conf
 
 env LANG               C
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
