@@ -1,1 +1,1 @@
-docker build -t nak3/cockroach-cluster .
+docker build -t docker.io/nak3/cockroach-cluster .
