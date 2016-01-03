@@ -10,7 +10,10 @@ RUN dnf install -y wget
 RUN wget --no-check-certificate -O /usr/local/bin/cockroach https://kenjiro.fedorapeople.org/misc/cockroach/cockroach
 RUN chmod 755 /usr/local/bin/cockroach
 
+ADD start-cockroach.sh /start-cockroach.sh
+RUN chmod 755 /start-cockroach.sh
+
 EXPOSE 26257
-ENTRYPOINT ["cockroach"]
-CMD ["start", "--stores=ssd=/tmp/data1", "--gossip=http-lb=$COCKROACH_CLUSTER_SERVICE_HOST:$COCKROACH_CLUSTER_SERVICE_PORT,$(awk 'END {print $1}' /etc/hosts)", "--addr=$(awk 'END {print $1}' /etc/hosts)", "--insecure=true"]
+#ENTRYPOINT ["cockroach"]
+CMD ["/start-cockroach.sh"]
 USER 1000
