@@ -1,1 +1,1 @@
-docker rm -f cockroach-remove
+docker rm -f cockroach-cluster
