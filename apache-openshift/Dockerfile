@@ -10,9 +10,6 @@ RUN INSTALL_PKGS="nss_wrapper httpd24 \
         httpd24-httpd-devel httpd24-mod_ssl httpd24-mod_auth_kerb httpd24-mod_ldap httpd24-mod_session \
 	atlas-devel gcc-gfortran libffi-devel libtool-ltdl" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-    rpm -V $INSTALL_PKGS && \
-    # Remove redhat-logos (httpd dependency) to keep image size smaller.
-    rpm -e --nodeps redhat-logos && \
     yum clean all -y
 
 RUN chown -R 1001:0 /opt/app-root && chmod -R ug+rwx /opt/app-root
